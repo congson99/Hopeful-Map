@@ -266,8 +266,11 @@ public class ListActivity extends AppCompatActivity {
             min_path = Math.min(min_path, currentPathweight);
 
         } while (findNextPermutation(vec));
-
-        return route;
+        int[] newroute = new int[route.length];
+        for (int i = 0;i<route.length;i++){
+            newroute[i] = route[route.length-1-i];
+        }
+        return newroute;
     }
 
 }
